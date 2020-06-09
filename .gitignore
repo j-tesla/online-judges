@@ -1,4 +1,5 @@
 *
 !*.cpp
 !.*
+!*.md
 temp.cpp
