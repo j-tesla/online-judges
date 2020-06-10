@@ -9,11 +9,12 @@
  
 using namespace std;
 
+#define uns unsigned
 typedef long long ll;
 typedef vector<bool> vb;
 typedef vector<int> vi;
 typedef pair<int,int> ii;
-typedef vector<unsigned> vu;
+typedef vector<uns> vu;
 typedef vector<long> vl;
 
 #define din(x) int x; cin >> x;
