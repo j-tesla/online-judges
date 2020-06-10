@@ -7,10 +7,12 @@
 <br>    _\#number-theory    \#sieve-of-eratosthenes_       
 <br>    solution : [PRIME1.cpp](PRIME1.cpp)
 <br>
+
 + [TDPRIMES](https://www.spoj.com/problems/TDPRIMES/)  -  Printing some primes          
 <br>    _\#number-theory     \#sieve-of-eratosthenes_
 <br>    solution : [TDPRIMES.cpp](TDPRIMES.cpp)
 <br>
+
 + [HS08PAUL](https://www.spoj.com/problems/HS08PAUL/) - A conjecture of Paul Erdős
 <br>    _\#number-theory_
 <br>    solution : [HS08PAUL.cpp](HS08PAUL.cpp)
