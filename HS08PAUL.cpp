@@ -39,6 +39,18 @@ int main() {
     ios_base::sync_with_stdio(false);
     cin.tie(nullptr);
 
+    vi primes;
+    int sqrtN = sqrt(N);
+    vb is_prime(sqrtN + 1, true);
+    is_prime[0] = is_prime[1] = false;
+    for (int i = 2; i <= sqrtN; ++i) {
+        if (is_prime[i]) {
+            primes.eb(i);
+            for (int j = i * i; j <= sqrtN; j += i) {
+                is_prime[j] = false;
+            }
+        }
+    }
 
     return 0;
 }
