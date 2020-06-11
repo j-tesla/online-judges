@@ -30,6 +30,7 @@ typedef vector<long> vl;
 #define s second
 
 
+const int N = 10000000;
 
 int main() {
     ios_base::sync_with_stdio(false);
