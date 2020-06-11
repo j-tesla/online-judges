@@ -1,5 +1,5 @@
 *
 !*.cpp
-!.*
+!.gitignore
 !*.md
 temp.cpp
