@@ -14,6 +14,7 @@ using namespace std;
 #define uns unsigned
 typedef long long ll;
 typedef vector<bool> vb;
+typedef vector<char> vc;
 typedef vector<int> vi;
 typedef pair<int,int> ii;
 typedef vector<uns> vu;
