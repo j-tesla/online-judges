@@ -15,5 +15,8 @@
   _\#number-theory_\
   solution : [HS08PAUL.cpp](HS08PAUL.cpp)
 
-
++ **[GCDEX](https://www.spoj.com/problems/GCDEX/) - GCD Extreme**\
+    _\#number-theory_\
+    solution : [GCDEX.cpp](GCDEX.cpp)
+    
 ## [![CODEFORCES](https://sta.codeforces.com/s/23672/images/codeforces-vs-coronavirus-65.png)](https://codeforces.com/)
