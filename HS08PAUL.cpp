@@ -29,12 +29,16 @@ typedef vector<long> vl;
 #define f first
 #define s second
 
-
 const int N = 10000000;
+
+int form(int i, int j) {
+    return i * i + j * j * j * j;
+}
 
 int main() {
     ios_base::sync_with_stdio(false);
     cin.tie(nullptr);
+
 
     return 0;
 }
