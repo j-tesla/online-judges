@@ -2,6 +2,8 @@
 *   author: @j-tesla
 */
 
+// C++14
+
 #pragma GCC optimize ("O3")
 #pragma GCC target ("sse4")
  
