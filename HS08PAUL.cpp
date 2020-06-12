@@ -31,8 +31,8 @@ typedef vector<long> vl;
 
 const int N = 10000000;
 
-int form(int i, int j) {
-    return i * i + j * j * j * j;
+inline ll form(const int i, const int j) {
+    return (i * i) + (j * j * j * j);
 }
 
 int main() {
@@ -50,6 +50,38 @@ int main() {
                 is_prime[j] = false;
             }
         }
+    }
+
+    set<int> Pauls;
+    int x = 1;
+    for (int x = 1; x <= sqrtN; ++x) {
+        for (int y = 1; form(x, y) <= N; ++y) {
+
+            ll formula = form(x, y);
+            if (is_prime[formula]) {
+                Pauls.insert(formula);
+            }
+
+                                               // almost forgot to increment (while loops are dangerous)
+        }
+    }
+
+
+    din(t)
+    while (t--) {
+        din(n)
+        int counter = 0;
+        bool flag = true;
+        for (int Paul : Pauls) {
+            if (Paul > n) {
+                cout << counter << endl;
+                flag = false;
+                break;
+            }
+            ++counter;
+        }
+        if (flag)
+            cout << Pauls.size() << endl;
     }
 
     return 0;
