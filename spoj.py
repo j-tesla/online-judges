@@ -10,6 +10,9 @@ pattern = r'^(https://)?(www.)?(spoj.com/)(problems/)(.*)(/)$'
 matching = False
 while (not matching):
     link = input("SPOJ link: ")
+    if requests.get(link).status_code != 200:
+        print('unable to connect to ' + link)
+        continue
     matching = re.match(pattern, link)
 
 problem_name = matching.groups()[-2]
