@@ -14,8 +14,11 @@ while (not matching):
 
 problem_name = matching.groups()[-2]
 
-print(problem_name)
+print('problem name: ' + problem_name)
 if not os.path.exists(problem_name + '.cpp'):
     print(subprocess.run(['cp', 'template.cpp', problem_name + '.cpp']))
+    print(problem_name + '.cpp created successfully')
+else:
+    print(problem_name + '.cpp file already exists.')
 
 
