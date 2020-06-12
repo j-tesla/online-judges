@@ -3,4 +3,5 @@
 !.gitignore
 !*.md
 !*.py
+!/requirements.txt
 temp.cpp
