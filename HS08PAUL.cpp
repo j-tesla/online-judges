@@ -39,14 +39,14 @@ int main() {
     ios_base::sync_with_stdio(false);
     cin.tie(nullptr);
 
-    vi primes;
     int sqrtN = sqrt(N);
-    vb is_prime(sqrtN + 1, true);
-    is_prime[0] = is_prime[1] = false;
+
+    vb is_prime(N + 1, true);
+    is_prime[0] = is_prime[1] = false;              // 0 and 1 aren't primes
+
     for (int i = 2; i <= sqrtN; ++i) {
         if (is_prime[i]) {
-            primes.eb(i);
-            for (int j = i * i; j <= sqrtN; j += i) {
+            for (int j = i * i; j <= N; j += i) {
                 is_prime[j] = false;
             }
         }
