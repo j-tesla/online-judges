@@ -17,7 +17,7 @@
 
 + [**GCDEX - GCD Extreme**](https://www.spoj.com/problems/GCDEX/) \
     _\#number-theory_\
-    solution : [GCDEX.cpp](GCDEX.cpp)
+    solution : [GCDEX.cpp](GCDEX.cpp)   _unsolved_
     
 <!--spoj end-->
     
