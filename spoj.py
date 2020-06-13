@@ -26,7 +26,6 @@ else:
     print(problem_name + '.cpp file already exists.')
     exit(1)
 
-
 page = requests.get(link)
 
 soup = BeautifulSoup(page.content, 'html.parser')
@@ -37,19 +36,21 @@ print('problem full name : ' + problem_full_name)
 
 problem_tags_bs = soup.find(id='problem-tags').contents
 
-
 problem_tags = []
 no_tags = False
 for x in problem_tags_bs:
-    if isinstance(x, NavigableString):
-        y = str(x)
-        if re.match(r'no tags', y):
-            no_tags = True
 
-    elif isinstance(x, Tag):
-        y = str(x.contents[0].contents[0])
-        problem_tags.append(y)
+    y = x
+    while isinstance(y, Tag):
+        y = y.contents[0]
+    if isinstance(y, NavigableString):
+        y = str(y)
 
+    if re.match(r'no tag', y):
+        no_tags = True
+        break
+    if re.match(r'(#[\-a-zA-Z0-9_]+)', y):
+        problem_tags.append(re.match(r'(#[\-a-zA-Z0-9_]+)', y).groups()[0])
 
 if not no_tags:
     print(problem_tags)
@@ -61,6 +62,9 @@ the_text += '[**' + problem_full_name + '**](' + link + ') \\\n'
 for problem_tag in problem_tags:
     the_text += '\t_\\' + problem_tag + '_'
 
+if no_tags:
+    the_text += '\t_no tags_'
+
 the_text += '\\\n\tsolution : [' + problem_name + '.cpp](' + problem_name + '.cpp)\n\n<!--spoj end-->'
 
 with open('README.md', 'r') as readme_file:
@@ -70,4 +74,3 @@ text = re.sub(r'<\!--spoj end-->', the_text, text)
 
 with open('README.md', 'w') as readme_file:
     readme_file.write(text)
-
