@@ -1,4 +1,4 @@
-# My solutions for online judge problmes :v:
+# My solutions for online judge problems :v:
 
 ## [![SPOJ](https://stx1.spoj.com/gfx/2015e.png)](https://www.spoj.com/)
 
