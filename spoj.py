@@ -7,12 +7,15 @@ import subprocess
 import re
 from bs4 import NavigableString, Tag, BeautifulSoup
 
-link = input("SPOJ link: ")
+link = input("SPOJ link: (Enter 'exit' to exit script)\t")
 pattern = r'^(https://)(www.)(spoj.com/)(problems/)(.+)(/)$'
 matching = re.match(pattern, link)
 while (not bool(matching)):
+    if link == 'exit':
+        print('exiting script')
+        exit(0)
     sys.stderr.write('invalid link in context\n')
-    link = input("SPOJ link: ")
+    link = input("SPOJ link: (Enter 'exit' to exit script)\t")
     try:
         if requests.get(link).status_code != 200:
             sys.stderr.write('unable to establish a connection to ' + link)
