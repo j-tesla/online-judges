@@ -1,18 +1,24 @@
 #!/usr/bin/env python3
 
+import sys
 import os
 import requests
 import subprocess
 import re
 from bs4 import NavigableString, Tag, BeautifulSoup
 
-link = ''
-pattern = r'^(https://)?(www.)?(spoj.com/)(problems/)(.*)(/)$'
+link = input("SPOJ link: ")
+pattern = r'^(https://)(www.)(spoj.com/)(problems/)(.+)(/)$'
 matching = re.match(pattern, link)
-while (not matching):
+while (not bool(matching)):
+    sys.stderr.write('invalid link in context\n')
     link = input("SPOJ link: ")
-    if requests.get(link).status_code != 200:
-        print('unable to connect to ' + link)
+    try:
+        if requests.get(link).status_code != 200:
+            sys.stderr.write('unable to establish a connection to ' + link)
+            continue
+    except:
+        sys.stderr.write('invalid link\n')
         continue
     matching = re.match(pattern, link)
 
