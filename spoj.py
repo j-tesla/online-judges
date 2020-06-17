@@ -1,16 +1,17 @@
 #!/usr/bin/env python3
 
-import sys
 import os
-import requests
-import subprocess
 import re
+import subprocess
+import sys
+
+import requests
 from bs4 import NavigableString, Tag, BeautifulSoup
 
 link = input("SPOJ link: (Enter 'exit' to exit script)\t")
 pattern = r'^(https://)(www.)(spoj.com/)(problems/)(.+)(/)$'
 matching = re.match(pattern, link)
-while (not bool(matching)):
+while not bool(matching):
     if link == 'exit':
         print('exiting script')
         exit(0)
@@ -20,7 +21,7 @@ while (not bool(matching)):
         if requests.get(link).status_code != 200:
             sys.stderr.write('unable to establish a connection to ' + link)
             continue
-    except:
+    except requests.exceptions.RequestException:
         sys.stderr.write('invalid link\n')
         continue
     matching = re.match(pattern, link)
@@ -79,7 +80,7 @@ the_text += '\\\n\tsolution : [' + problem_name + '.cpp](' + problem_name + '.cp
 with open('README.md', 'r') as readme_file:
     text = readme_file.read()
 
-text = re.sub(r'<\!--spoj end-->', the_text, text)
+text = text.replace(r'<\!--spoj end-->', the_text)
 
 with open('README.md', 'w') as readme_file:
     readme_file.write(text)
