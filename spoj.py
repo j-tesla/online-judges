@@ -4,7 +4,7 @@ import os
 import re
 import subprocess
 import sys
-from collections.abc import Sized, Iterable
+from typing import Sized, Iterable
 
 import requests
 from bs4 import NavigableString, Tag, BeautifulSoup
