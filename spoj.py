@@ -4,23 +4,27 @@ import os
 import re
 import subprocess
 import sys
-from collections.abc import Iterable
+from collections.abc import Sized, Iterable
 
 import requests
 from bs4 import NavigableString, Tag, BeautifulSoup
 
 
-def is_iterable(obj):
-    return isinstance(obj, Iterable)
-
-
+# exits code if passed string is 'exit'
 def script_exit(code):
+    if not isinstance(code, str):
+        raise TypeError('passed argument must be a string')
+
     if code == 'exit' or code == 'EXIT' or code == 'Exit':
         print('EXITING SCRIPT')
         exit(0)
 
 
+# appends README.md with problem text passed
 def append_readme(text_to_append):
+    if not isinstance(text_to_append, str):
+        raise TypeError('append_readme takes a string as an argument')
+
     with open('README.md', 'r') as readme_file:
         text = readme_file.read()
 
@@ -30,16 +34,17 @@ def append_readme(text_to_append):
         readme_file.write(text)
 
 
+# gets problem link(and the problem name from it) from input or sys args if passed
 def get_link_and_problem_name(sys_args=None):
     if sys_args is None:
         sys_args = []
-    if not is_iterable(sys_args):
-        raise TypeError('passed argument needs to be an iterable')
+    if not isinstance(sys_args, Sized):
+        raise TypeError('passed argument must be an sized')
 
     input_message = "SPOJ link: (Enter 'exit' to exit the script)\t"
     pattern = r'^(https://)(www.)(spoj.com/)(problems/)(.+)(/)$'
 
-    if len(sys_args) == 1:
+    if len(sys_args) <= 1:
         input_link = input(input_message)
         script_exit(input_link)
     else:
@@ -80,7 +85,11 @@ def get_link_and_problem_name(sys_args=None):
     return input_link, problem_name_in_link, page
 
 
+# checks if the problem file exists and creates, exits code if the file already exists
 def check_and_create_file(name):
+    if not isinstance(name, str):
+        raise TypeError('argument name should be a string')
+
     if not os.path.exists(name + '.cpp'):
         if subprocess.run(['cp', 'template.cpp', name + '.cpp']).returncode == 0:
             print(name + '.cpp created successfully')
@@ -91,13 +100,21 @@ def check_and_create_file(name):
         exit(1)
 
 
+# gets problem's full name from the problem page's soup
 def get_problem_full_name(soup_object):
+    if not isinstance(soup_object, BeautifulSoup):
+        raise TypeError('BeautifulSoup object must be passed')
+
     full_name_tag = soup_object.find(id='problem-name')
     full_name = str(full_name_tag.string)
     return full_name
 
 
+# gets problem's tags from problem page's soup
 def get_problem_tags(soup_object):
+    if not isinstance(soup_object, BeautifulSoup):
+        raise TypeError('BeautifulSoup object must be passed')
+
     problem_tags_bs = soup_object.find(id='problem-tags').contents
     tags = []
 
@@ -115,7 +132,15 @@ def get_problem_tags(soup_object):
     return tags
 
 
+# generates the text to append in the README.md from the details passed
 def problem_text(problem_name, problem_full_name, link, problem_tags):
+    if not (isinstance(problem_name, str) and isinstance(problem_full_name, str)):
+        raise TypeError("problem_name and problem_full_name should be strings")
+    if not isinstance(link, str):
+        raise TypeError('link must be a string')
+    if not isinstance(problem_tags, Iterable):
+        raise TypeError('problem_tags needs to be an iterable')
+
     the_text = '+ '
 
     the_text += '[**' + problem_full_name + '**](' + link + ') \\\n'
@@ -131,7 +156,13 @@ def problem_text(problem_name, problem_full_name, link, problem_tags):
     return the_text
 
 
-def main(sys_args):
+# it's the frickin' main! does it require any description?
+def main(sys_args=None):
+    if sys_args is None:
+        sys_args = []
+    if not isinstance(sys_args, Sized):
+        raise TypeError('sys_args should be an sized')
+
     link, problem_name, problem_page = get_link_and_problem_name(sys_args)
     print('problem name: ' + problem_name)
     soup = BeautifulSoup(problem_page.content, 'html.parser')
