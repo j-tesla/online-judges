@@ -4,14 +4,13 @@ import os
 import re
 import subprocess
 import sys
-from typing import Sized, Iterable
 
 import requests
 from bs4 import NavigableString, Tag, BeautifulSoup
 
 
 # exits code if passed string is 'exit'
-def script_exit(code):
+def script_exit(code: str) -> None:
     if not isinstance(code, str):
         raise TypeError('passed argument must be a string')
 
@@ -21,7 +20,7 @@ def script_exit(code):
 
 
 # appends README.md with problem text passed
-def append_readme(text_to_append):
+def append_readme(text_to_append: str) -> None:
     if not isinstance(text_to_append, str):
         raise TypeError('append_readme takes a string as an argument')
 
@@ -35,10 +34,10 @@ def append_readme(text_to_append):
 
 
 # gets problem link(and the problem name from it) from input or sys args if passed
-def get_link_and_problem_name(sys_args=None):
+def get_link_and_problem_name(sys_args: list = None) -> (str, requests.models.Response):
     if sys_args is None:
         sys_args = []
-    if not isinstance(sys_args, Sized):
+    if not isinstance(sys_args, list):
         raise TypeError('passed argument must be an sized')
 
     input_message = "SPOJ link: (Enter 'exit' to exit the script)\t"
@@ -86,7 +85,7 @@ def get_link_and_problem_name(sys_args=None):
 
 
 # checks if the problem file exists and creates, exits code if the file already exists
-def check_and_create_file(name):
+def check_and_create_file(name: str) -> None:
     if not isinstance(name, str):
         raise TypeError('argument name should be a string')
 
@@ -101,7 +100,7 @@ def check_and_create_file(name):
 
 
 # gets problem's full name from the problem page's soup
-def get_problem_full_name(soup_object):
+def get_problem_full_name(soup_object: BeautifulSoup) -> str:
     if not isinstance(soup_object, BeautifulSoup):
         raise TypeError('BeautifulSoup object must be passed')
 
@@ -133,12 +132,12 @@ def get_problem_tags(soup_object):
 
 
 # generates the text to append in the README.md from the details passed
-def problem_text(problem_name, problem_full_name, link, problem_tags):
+def problem_text(problem_name: str, problem_full_name: str, link: str, problem_tags: list) -> str:
     if not (isinstance(problem_name, str) and isinstance(problem_full_name, str)):
         raise TypeError("problem_name and problem_full_name should be strings")
     if not isinstance(link, str):
         raise TypeError('link must be a string')
-    if not isinstance(problem_tags, Iterable):
+    if not isinstance(problem_tags, list):
         raise TypeError('problem_tags needs to be an iterable')
 
     the_text = '+ '
@@ -157,10 +156,10 @@ def problem_text(problem_name, problem_full_name, link, problem_tags):
 
 
 # it's the frickin' main! does it require any description?
-def main(sys_args=None):
+def main(sys_args: list = None) -> None:
     if sys_args is None:
         sys_args = []
-    if not isinstance(sys_args, Sized):
+    if not isinstance(sys_args, list):
         raise TypeError('sys_args should be an sized')
 
     link, problem_name, problem_page = get_link_and_problem_name(sys_args)
