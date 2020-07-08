@@ -72,7 +72,7 @@ def get_link_and_problem_name(sys_args: list = None) -> (str, requests.models.Re
             page = requests.get(input_link)
             print(str(page.status_code) + ':', end='\t')
             if page.status_code != 200:
-                sys.stderr.write('unable to connect with ' + input_link)
+                sys.stderr.write('unable to connect with ' + input_link + '\n')
                 continue
         except requests.exceptions.RequestException:
             sys.stderr.write('invalid link\n')
@@ -93,9 +93,11 @@ def check_and_create_file(name: str) -> None:
         if subprocess.run(['cp', 'template.cpp', 'spoj/' + name + '.cpp']).returncode == 0:
             print(name + '.cpp created successfully')
         else:
-            sys.stderr.write('failed to create ' + name + '.cpp')
+            sys.stderr.write('failed to create ' + name + '.cpp\n')
+            print('exiting...')
     else:
-        sys.stderr.write(name + '.cpp file already exists.')
+        sys.stderr.write(name + '.cpp file already exists.\n')
+        print('exiting...')
         exit(1)
 
 
