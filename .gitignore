@@ -1,8 +1,5 @@
-*
-!*.cpp
-!.gitignore
-!*.md
-!*.py
-!/requirements.txt
-!/LICENSE
-temp.cpp
+*~
+.temp.cpp
+.idea/
+cmake-build-debug
+CMakeLists.txt
