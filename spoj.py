@@ -89,8 +89,8 @@ def check_and_create_file(name: str) -> None:
     if not isinstance(name, str):
         raise TypeError('argument name should be a string')
 
-    if not os.path.exists(name + '.cpp'):
-        if subprocess.run(['cp', 'template.cpp', name + '.cpp']).returncode == 0:
+    if not os.path.exists('spoj/' + name + '.cpp'):
+        if subprocess.run(['cp', 'template.cpp', 'spoj/' + name + '.cpp']).returncode == 0:
             print(name + '.cpp created successfully')
         else:
             sys.stderr.write('failed to create ' + name + '.cpp')
