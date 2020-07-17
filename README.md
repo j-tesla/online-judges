@@ -1,4 +1,6 @@
  [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+ ![GitHub last commit](https://img.shields.io/github/last-commit/j-tesla/online-judges)
+ 
 # My solutions for online judge problems :v:
 
 ## [![SPOJ](https://stx1.spoj.com/gfx/2015e.png)](https://www.spoj.com/)
