@@ -1,3 +1,4 @@
+ [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 # My solutions for online judge problems :v:
 
 ## [![SPOJ](https://stx1.spoj.com/gfx/2015e.png)](https://www.spoj.com/)
