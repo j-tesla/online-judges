@@ -152,7 +152,7 @@ def problem_text(problem_name: str, problem_full_name: str, link: str, problem_t
     if len(problem_tags) == 0:
         the_text += '\t_no tags_'
 
-    the_text += '\\\n\tsolution : [' + problem_name + '.cpp](' + problem_name + '.cpp)\n\n<!--spoj end-->'
+    the_text += '\\\n\tsolution : [' + problem_name + '.cpp](spoj/' + problem_name + '.cpp)\n\n<!--spoj end-->'
 
     return the_text
 

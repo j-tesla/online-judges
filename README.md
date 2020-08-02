@@ -8,27 +8,27 @@
 
 + [**PRIME1  -  Prime Generator**](https://www.spoj.com/problems/PRIME1/) \
     _\#number-theory_    _\#sieve-of-eratosthenes_\
-    solution : [PRIME1.cpp](PRIME1.cpp)
+    solution : [PRIME1.cpp](spoj/PRIME1.cpp)
 
 + [**TDPRIMES - Printing some primes**](https://www.spoj.com/problems/TDPRIMES/) \
     _\#number-theory_     _\#sieve-of-eratosthenes_\
-    solution : [TDPRIMES.cpp](TDPRIMES.cpp)
+    solution : [TDPRIMES.cpp](spoj/TDPRIMES.cpp)
 
 + [**HS08PAUL - A conjecture of Paul Erdős**](https://www.spoj.com/problems/HS08PAUL/) \
     _\#number-theory_\
-    solution : [HS08PAUL.cpp](HS08PAUL.cpp)
+    solution : [HS08PAUL.cpp](spoj/HS08PAUL.cpp)
 
 + [**GCDEX - GCD Extreme**](https://www.spoj.com/problems/GCDEX/) \
     _\#number-theory_\
-    solution : [GCDEX.cpp](GCDEX.cpp)   _unsolved_
+    solution : [GCDEX.cpp](spoj/GCDEX.cpp)   _unsolved_
     
 + [**FCTRL - Factorial**](https://www.spoj.com/problems/FCTRL/) \
 	_\#math_\
-	solution : [FCTRL.cpp](FCTRL.cpp)
+	solution : [FCTRL.cpp](spoj/FCTRL.cpp)
 
 + [**FCTRL2 - Small factorials**](https://www.spoj.com/problems/FCTRL2/) \
 	_\#math_	_\#big-numbers_\
-	solution : [FCTRL2.cpp](FCTRL2.py)
+	solution : [FCTRL2.cpp](spoj/FCTRL2.py)
 
 <!--spoj end-->
     
