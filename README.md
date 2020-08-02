@@ -28,7 +28,7 @@
 
 + [**FCTRL2 - Small factorials**](https://www.spoj.com/problems/FCTRL2/) \
 	_\#math_	_\#big-numbers_\
-	solution : [FCTRL2.cpp](spoj/FCTRL2.py)
+	solution : [FCTRL2.py](spoj/FCTRL2.py)
 
 <!--spoj end-->
     
