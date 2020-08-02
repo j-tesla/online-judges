@@ -22,6 +22,10 @@
     _\#number-theory_\
     solution : [GCDEX.cpp](GCDEX.cpp)   _unsolved_
     
++ [**FCTRL - Factorial**](https://www.spoj.com/problems/FCTRL/) \
+	_\#math_\
+	solution : [FCTRL.cpp](FCTRL.cpp)
+
 <!--spoj end-->
     
 ## [![CODEFORCES](https://sta.codeforces.com/s/23672/images/codeforces-vs-coronavirus-65.png)](https://codeforces.com/)
