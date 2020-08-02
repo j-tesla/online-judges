@@ -26,6 +26,10 @@
 	_\#math_\
 	solution : [FCTRL.cpp](FCTRL.cpp)
 
++ [**FCTRL2 - Small factorials**](https://www.spoj.com/problems/FCTRL2/) \
+	_\#math_	_\#big-numbers_\
+	solution : [FCTRL2.cpp](FCTRL2.py)
+
 <!--spoj end-->
     
 ## [![CODEFORCES](https://sta.codeforces.com/s/23672/images/codeforces-vs-coronavirus-65.png)](https://codeforces.com/)
