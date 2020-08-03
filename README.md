@@ -30,6 +30,10 @@
 	_\#math_	_\#big-numbers_\
 	solution : [FCTRL2.py](spoj/FCTRL2.py)
 
++ [**SBANK - Sorting Bank Accounts**](https://www.spoj.com/problems/SBANK/) \
+	_\#sorting_	_\#ad-hoc-1_\
+	solution : [SBANK.py](spoj/SBANK.py)
+
 <!--spoj end-->
     
 ## [![CODEFORCES](https://sta.codeforces.com/s/23672/images/codeforces-vs-coronavirus-65.png)](https://codeforces.com/)
