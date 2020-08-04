@@ -40,6 +40,6 @@
 
 <!--codeforces end-->
 
-## [<img src="https://s3.amazonaws.com/codechef_shared/sites/all/themes/abessive/cc-logo.svg" height="80">](https://www.codechef.com/)
+## [<img alt="CODECHEF" src="https://s3.amazonaws.com/codechef_shared/sites/all/themes/abessive/cc-logo.svg" height="80">](https://www.codechef.com/)
 
 <!--codechef end-->
