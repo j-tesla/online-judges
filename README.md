@@ -1,5 +1,6 @@
  [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
  ![GitHub last commit](https://img.shields.io/github/last-commit/j-tesla/online-judges)
+ [![time tracker](https://wakatime.com/badge/github/j-tesla/online-judges.svg)](https://wakatime.com/badge/github/j-tesla/online-judges)
  
 # My solutions for online judge problems :v:
 
